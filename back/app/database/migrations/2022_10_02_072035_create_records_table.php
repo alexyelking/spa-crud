@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('patronym');
             $table->string('category');
             $table->integer('number_of_tickets');
-            $table->integer('total_price');
+            $table->integer('total_price')->default(500);
             $table->timestamps();
         });
     }

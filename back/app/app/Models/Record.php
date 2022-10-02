@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string category
  * @property integer number_of_tickets
  * @property integer total_price
+ * @method static paginate(mixed $limit)
  */
 class Record extends Model
 {
