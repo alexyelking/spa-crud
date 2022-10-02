@@ -18,6 +18,6 @@ use Illuminate\Database\Eloquent\Model;
 class Record extends Model
 {
     protected $fillable = [
-        'name', 'surname', 'patronym', 'category','number_of_tickets',
+        'name', 'surname', 'patronymic', 'category','number_of_tickets',
     ];
 }

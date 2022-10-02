@@ -24,23 +24,24 @@ class RecordController extends Controller
 
     public function create(CreateRequest $request)
     {
-        dd(345);
-        $record = Record::create($request->only(['name', 'surname', 'patronym', 'category', 'number_of_tickets']));
-        return Response::ok(["client" => new RecordDataResource($record)]);
+        $record = Record::create($request->only(['name', 'surname', 'patronymic', 'category', 'number_of_tickets']));
+        return Response::ok(["record" => new RecordDataResource($record)]);
     }
 
-    public function edit($id)
+    public function edit(Record $record)
     {
-        // Открытие формы обновления записи
+        return Response::ok(["record" => new RecordDataResource($record)]);
     }
 
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, Record $record)
     {
-        // Обновление записи
+        $record->update($request->only(['name', 'surname', 'patronymic', 'category', 'number_of_tickets']));
+        return Response::ok(["record" => new RecordDataResource($record)]);
     }
 
-    public function destroy($id)
+    public function destroy(Record $record)
     {
-        // Удаление конкретной записи
+        $record->delete();
+        return Response::ok();
     }
 }

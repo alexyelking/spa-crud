@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('id')->unique();
             $table->string('name');
             $table->string('surname');
-            $table->string('patronym');
+            $table->string('patronymic');
             $table->string('category');
             $table->integer('number_of_tickets');
             $table->integer('total_price')->default(500);
