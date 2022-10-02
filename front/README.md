@@ -1,11 +1,8 @@
 # front
 
-## Project setup
-```
-npm install
-```
+## Настройка для локальной разработки на тачке:
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+1. npm install
+2. npm run serve
+
+## Настройка завершена.
