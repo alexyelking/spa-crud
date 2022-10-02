@@ -1,0 +1,1 @@
+CREATE DATABASE mag3term_db

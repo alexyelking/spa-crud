@@ -1,0 +1,22 @@
+# local env files
+.env
+
+# Laravel vendor
+/back/app/vendor
+/back/app/vendor/
+/back/app/vendor/*
+
+# Local mysql files
+/back/db/
+/back/db/*
+/back/db/*
+/back/db/
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
