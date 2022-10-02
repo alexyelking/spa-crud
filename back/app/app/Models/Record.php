@@ -13,10 +13,11 @@ use Illuminate\Database\Eloquent\Model;
  * @property integer number_of_tickets
  * @property integer total_price
  * @method static paginate(mixed $limit)
+ * @method static create(array $only)
  */
 class Record extends Model
 {
     protected $fillable = [
-        'name', 'surname', 'patrnym', 'category','number_of_tickets','total_price',
+        'name', 'surname', 'patronym', 'category','number_of_tickets',
     ];
 }

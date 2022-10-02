@@ -16,19 +16,17 @@ use Illuminate\Support\Facades\Response;
 
 class RecordController extends Controller
 {
-    /**
-     * @param Request $request
-     * @return void
-     */
     public function index(Request $request)
     {
         $records = Record::paginate($request->limit);
         return Response::ok(["data" => RecordDataResource::collection($records), "meta" => new RecordMetaResource($records)]);
     }
 
-    public function store()
+    public function create(CreateRequest $request)
     {
-        // Сохранение записи
+        dd(345);
+        $record = Record::create($request->only(['name', 'surname', 'patronym', 'category', 'number_of_tickets']));
+        return Response::ok(["client" => new RecordDataResource($record)]);
     }
 
     public function edit($id)

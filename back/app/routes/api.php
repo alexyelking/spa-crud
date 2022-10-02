@@ -1,8 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +15,7 @@ use App\Http\Controllers;
 
 Route::group(["prefix" => "records"], function () {
     Route::get('/', 'RecordController@index')->name('records.index');
-    Route::post('/', 'RecordController@store')->name('records.store');
+    Route::post('/', 'RecordController@create')->name('records.create');
     Route::get('/{record}', 'RecordController@edit')->name('records.edit');
     Route::post('/{record}', 'RecordController@update')->name('records.update');
     Route::delete('/{record}', 'RecordController@destroy')->name('records.destroy');
