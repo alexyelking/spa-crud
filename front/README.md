@@ -1,19 +1,10 @@
-# front
+# Front
 
-## Project setup
-```
-npm install
-```
+## Настройка для локальной разработки (докер):
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+1. Скопируй ```.env.example``` в ```.env```
+2. Укажи порт, который у тебя свободен. Либо оставь этот. 
+3. Запусти докер-композ
+4. Зайди на 0.0.0.0:**PORT**
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Настройка завершена.

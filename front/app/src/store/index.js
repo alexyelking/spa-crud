@@ -35,12 +35,10 @@ export default createStore({
       const idx = entries.findIndex(e => e.id === id)
 
       entries.splice(idx, 1)
-      // localStorage.removeItem('entries')
-      // state.entries.push(entries)
-      localStorage.setItem('entries', JSON.stringify(entries))
 
-      state.entries.ref();
-      // debugger
+      state.entries = entries
+
+      localStorage.setItem('entries', JSON.stringify(state.entries))
     }
   },
   actions: {
