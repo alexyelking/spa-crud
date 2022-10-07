@@ -12,9 +12,9 @@ const routes = [
     component: () => import('../views/List.vue')
   },
   {
-    path: '/task/:id',
-    name: 'task',
-    component: () => import('../views/Task.vue')
+    path: '/entry/edit/:id',
+    name: 'editEntry',
+    component: () => import('../views/Edit.vue')
   }
 ]
 

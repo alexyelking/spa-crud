@@ -1,7 +1,7 @@
 <template>
   <div class="row">
-    <div class="col s6 offset-s3">
-      <h1>Create entry</h1>
+    <div v-if="entry" class="col s6 offset-s3">
+      <h1>Edit entry</h1>
 
       <form @submit.prevent="submitHandler">
 
@@ -19,20 +19,20 @@
 
         <div class="input-field">
           <p>
-          <label>
-            <input v-model="category" value="Ordinary" name="group1" type="radio" checked/>
-            <span>Ordinary</span>
-          </label>
+            <label>
+              <input v-model="category" value="Ordinary" name="group1" type="radio" checked/>
+              <span>Ordinary</span>
+            </label>
             <br>
-          <label>
-            <input v-model="category" value="Student" name="group1" type="radio" />
-            <span>Student</span>
-          </label>
+            <label>
+              <input v-model="category" value="Student" name="group1" type="radio" />
+              <span>Student</span>
+            </label>
             <br>
-          <label>
-            <input v-model="category" value="Pensioner" name="group1" type="radio" />
-            <span>Pensioner</span>
-          </label>
+            <label>
+              <input v-model="category" value="Pensioner" name="group1" type="radio" />
+              <span>Pensioner</span>
+            </label>
           </p>
         </div>
 
@@ -42,33 +42,53 @@
           <span class="helper-text" data-success="right">min:1 max:15</span>
         </div>
 
-        <button class="btn green" type="submit" style="margin-right: 1rem;">Create</button>
+        <button class="btn green" type="submit" style="margin-right: 1rem;">Update</button>
         <button class="btn" @click="toList">To List</button>
       </form>
 
+
     </div>
+
+    <div v-else>
+      <h1 >There are no entries here...</h1>
+      <button class="btn" @click="toList">To List</button>
+    </div>
+
   </div>
 </template>
 
 <script>
 export default {
-  name: 'create',
+  name: 'edit',
+  computed: {
+    entry() {
+      return this.$store.getters.entryById(+this.$route.params.id)
+    }
+  },
   data: () => ({
     first_name: '',
     last_name: '',
     category: 'Ordinary',
     number_of_tickets: '',
   }),
+  mounted() {
+    this.first_name = this.entry.first_name
+    this.last_name = this.entry.last_name
+    this.category = this.entry.category
+    this.number_of_tickets = this.entry.number_of_tickets
+    setTimeout(() => {
+      M.updateTextFields()
+    },0)
+  },
   methods: {
     submitHandler() {
-      const entry = {
-        id: Date.now(),
+      this.$store.dispatch('updateEntry', {
+        id: this.entry.id,
         first_name: this.first_name,
         last_name: this.last_name,
         category: this.category,
         number_of_tickets: this.number_of_tickets
-      }
-      this.$store.dispatch('createEntry', entry)
+      })
       this.$router.push('/list')
     },
     toList() {
@@ -76,7 +96,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style lang="scss" scoped>
