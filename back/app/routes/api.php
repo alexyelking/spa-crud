@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(["prefix" => "records"], function () {
     Route::get('/', 'RecordController@index')->name('records.index');
     Route::post('/', 'RecordController@create')->name('records.create');
-    Route::get('/{record}', 'RecordController@edit')->name('records.edit');
+//    Route::get('/{record}', 'RecordController@edit')->name('records.edit');
     Route::post('/{record}', 'RecordController@update')->name('records.update');
     Route::delete('/{record}', 'RecordController@destroy')->name('records.destroy');
 });

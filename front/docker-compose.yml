@@ -5,8 +5,6 @@ services:
   spa:
     image: node:lts-alpine
     restart: "no"
-    environment:
-      - API_URL=${API_URL}
     volumes:
       - ./app:/app
     ports:

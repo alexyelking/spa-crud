@@ -28,10 +28,10 @@ class RecordController extends Controller
         return Response::ok(["record" => new RecordDataResource($record)]);
     }
 
-    public function edit(Record $record)
-    {
-        return Response::ok(["record" => new RecordDataResource($record)]);
-    }
+//    public function edit(Record $record)
+//    {
+//        return Response::ok(["record" => new RecordDataResource($record)]);
+//    }
 
     public function update(UpdateRequest $request, Record $record)
     {
