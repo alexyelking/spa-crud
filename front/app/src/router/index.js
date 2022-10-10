@@ -15,7 +15,16 @@ const routes = [
     path: '/entry/edit/:id',
     name: 'editEntry',
     component: () => import('../views/Edit.vue')
-  }
+  },
+  {
+    path: '/404',
+    name: '404',
+    component: () => import('../views/404.vue'),
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: '/404'
+  },
 ]
 
 const router = createRouter({
