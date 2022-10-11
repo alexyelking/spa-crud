@@ -6,9 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property int id
- * @property string name
- * @property string surname
- * @property string patronym
+ * @property string first_name
+ * @property string last_name
  * @property string category
  * @property integer number_of_tickets
  * @property integer total_price
@@ -18,6 +17,6 @@ use Illuminate\Database\Eloquent\Model;
 class Record extends Model
 {
     protected $fillable = [
-        'name', 'surname', 'patronymic', 'category','number_of_tickets',
+        'first_name', 'last_name', 'category', 'number_of_tickets', 'total_price'
     ];
 }

@@ -15,12 +15,11 @@ return new class extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->string('name');
-            $table->string('surname');
-            $table->string('patronymic');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('category');
             $table->integer('number_of_tickets');
-            $table->integer('total_price')->default(500);
+            $table->integer('total_price');
             $table->timestamps();
         });
     }

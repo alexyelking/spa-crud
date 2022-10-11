@@ -24,11 +24,11 @@ class CreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'string', 'min:2', 'max:50'],
-            'surname' => ['required', 'string', 'min:2', 'max:50'],
-            'patronymic' => ['required', 'string', 'min:2', 'max:50'],
-            'category' => ['required', 'string', 'min:2', 'max:50'],
-            'number_of_tickets' => ['required', 'integer', 'min:1', 'max:10'],
+            'first_name' => ['required', 'string', 'min:1', 'max:15'],
+            'last_name' => ['required', 'string', 'min:1', 'max:15'],
+            'category' => ['required', 'string', 'min:1', 'max:20'],
+            'number_of_tickets' => ['required', 'integer', 'min:1', 'max:15'],
+            'total_price' => ['integer'],
         ];
     }
 }

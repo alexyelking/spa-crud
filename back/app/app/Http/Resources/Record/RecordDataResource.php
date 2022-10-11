@@ -12,11 +12,11 @@ class RecordDataResource extends JsonResource
     {
         return [
             "id" => $this->resource->id,
-            "name" => $this->resource->name,
-            "surname" => $this->resource->surname,
-            "patronymic" => $this->resource->patronymic,
+            "first_name" => $this->resource->first_name,
+            "last_name" => $this->resource->last_name,
             "category" => $this->resource->category,
             "number_of_tickets" => $this->resource->number_of_tickets,
+            "total_price" => $this->resource->total_price,
         ];
     }
 }

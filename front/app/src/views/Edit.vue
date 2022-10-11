@@ -43,7 +43,7 @@
         </div>
 
         <button class="btn green" type="submit" style="margin-right: 1rem;">Update</button>
-        <button class="btn" @click="toList">To List</button>
+        <button class="btn" :to="'/list'">To List</button>
       </form>
 
 
@@ -70,6 +70,7 @@ export default {
     last_name: '',
     category: 'Ordinary',
     number_of_tickets: '',
+    total_price: 0
   }),
   mounted() {
     this.first_name = this.entry.first_name
@@ -81,18 +82,22 @@ export default {
     },0)
   },
   methods: {
-    submitHandler() {
-      this.$store.dispatch('updateEntry', {
+    async submitHandler() {
+      const entry = {
         id: this.entry.id,
         first_name: this.first_name,
         last_name: this.last_name,
         category: this.category,
-        number_of_tickets: this.number_of_tickets
-      })
+        number_of_tickets: this.number_of_tickets,
+        total_price: this.total_price
+      }
+
+      await this.$store.dispatch('updateEntry', entry)
       this.$router.push('/list')
     },
-    toList() {
-      this.$router.push('/list')
+    async toList() {
+      await this.$router.push('/list')
+      location.reload()
     }
   }
 }
