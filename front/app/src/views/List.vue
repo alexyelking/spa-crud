@@ -33,19 +33,20 @@
         <td>{{ entry.number_of_tickets }}</td>
         <td>{{ entry.total_price }}</td>
         <td>
-          <router-link tag="button" class="btn btn-yellow" :to="'/entry/edit/' + entry.id">
+          <router-link tag="button" class="btn yellow" :to="'/entry/edit/' + entry.id">
             <i class="material-icons">edit</i>
           </router-link>
         </td>
         <td>
-          <button class="btn btn-red" @click="deleteEntry(entry.id)"><i class="material-icons">delete</i></button>
+          <button class="btn red" @click="deleteEntry(entry.id)"><i class="material-icons">delete</i></button>
         </td>
       </tr>
       </tbody>
     </table>
     <p v-else>No entries here. Create one</p>
+    <br>
     <router-link
-        class = "btn"
+        class = "btn green"
         to="/"
     >
       <i class="material-icons">plus_one</i>
