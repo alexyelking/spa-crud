@@ -1,6 +1,9 @@
 <template>
-
   <h1>List</h1>
+  <h6>Standard ticket price: 500</h6>
+  <button class="btn orange" @click="notification()">
+    Task text...
+  </button>
   <hr>
   <br>
 
@@ -46,12 +49,12 @@
     <p v-else>No entries here. Create one</p>
     <br>
     <router-link
-        class = "btn green"
+        class="btn green"
         to="/"
     >
       <i class="material-icons">plus_one</i>
     </router-link>
-<!--    <button class="btn btn-blue" :to="'/'"></button>-->
+    <!--    <button class="btn btn-blue" :to="'/'"></button>-->
   </div>
 </template>
 
@@ -81,6 +84,9 @@ export default {
         await this.$store.dispatch('deleteEntry', id)
         this.loading = false
       }
+    },
+    notification() {
+      window.alert("Стоимость билетов учреждения досуга. Есть несколько категорий клиентов, обычные клиенты (100%), пенсионеры (80%), студенты (90%), разработать для каждой из этих категорий различные алгоритмы расчёта стоимости билетов для них. Программа должна позволять вычислять стоимость билетов для различных категорий клиентов, иметь возможность вводить клиентов, вносить изменения.");
     }
   },
 }
