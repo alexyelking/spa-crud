@@ -44,6 +44,13 @@
       </tbody>
     </table>
     <p v-else>No entries here. Create one</p>
+    <router-link
+        class = "btn"
+        to="/"
+    >
+      <i class="material-icons">plus_one</i>
+    </router-link>
+<!--    <button class="btn btn-blue" :to="'/'"></button>-->
   </div>
 </template>
 
