@@ -1,3 +1,3 @@
 # Course project of the third semester of the master's program
-## Back - Laravel (Требуется докер)
-## Front - Vue JS (Требуется докер)
+## Back - Laravel (Docker required)
+## Front - Vue JS (Docker required)
