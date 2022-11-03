@@ -1,6 +1,6 @@
 <template>
   <h1>List</h1>
-<!--  <h6>Standard ticket price: 500</h6>-->
+  <h6>Standard ticket price: 500</h6>
   <button class="btn orange" @click="notification()">
     Task text...
   </button>
