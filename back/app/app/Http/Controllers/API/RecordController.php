@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Response;
  */
 class RecordController extends Controller
 {
+    public int $ordinary_price = 500;
+    public int $student_price = 450;
+    public int $pensioner_price = 400;
     public function index(Request $request)
     {
         $records = Record::paginate($request->limit);
@@ -27,24 +30,15 @@ class RecordController extends Controller
 
     public function create(CreateRequest $request)
     {
-        // 100%
-        $ordinary_price = 500;
-        // 90%
-        $student_price = 450;
-        // 80%
-        $pensioner_price = 400;
-
         $category = $request->category;
         $number_of_tickets = $request->number_of_tickets;
-
         if ($category == 'Student') {
-            $total_price = $student_price * $number_of_tickets;
+            $total_price = $this->student_price * $number_of_tickets;
         } elseif ($category == 'Pensioner') {
-            $total_price = $pensioner_price * $number_of_tickets;
+            $total_price = $this->pensioner_price * $number_of_tickets;
         } else {
-            $total_price = $ordinary_price * $number_of_tickets;
+            $total_price = $this->ordinary_price * $number_of_tickets;
         }
-
         $record = new Record();
         $record->first_name=$request->first_name;
         $record->last_name=$request->last_name;
@@ -52,40 +46,27 @@ class RecordController extends Controller
         $record->number_of_tickets=$number_of_tickets;
         $record->total_price=$total_price;
         $record->save();
-
         return Response::ok(["record" => new RecordDataResource($record)]);
     }
 
     public function update(UpdateRequest $request, Record $record)
     {
-        // 100%
-        $ordinary_price = 500;
-        // 90%
-        $student_price = 450;
-        // 80%
-        $pensioner_price = 400;
-
-        $first_name = $request->first_name;
-        $last_name = $request->last_name;
         $category = $request->category;
         $number_of_tickets = $request->number_of_tickets;
-
         if ($category == 'Student') {
-            $total_price = $student_price * $number_of_tickets;
+            $total_price = $this->student_price * $number_of_tickets;
         } elseif ($category == 'Pensioner') {
-            $total_price = $pensioner_price * $number_of_tickets;
+            $total_price = $this->pensioner_price * $number_of_tickets;
         } else {
-            $total_price = $ordinary_price * $number_of_tickets;
+            $total_price = $this->ordinary_price * $number_of_tickets;
         }
-
         $record->update([
-            'first_name'=>$first_name,
-            'last_name'=>$last_name,
+            'first_name'=>$request->first_name,
+            'last_name'=>$request->last_name,
             'category'=>$category,
             'number_of_tickets'=>$number_of_tickets,
             'total_price'=>$total_price,
             ]);
-
         return Response::ok(["record" => new RecordDataResource($record)]);
     }
 
