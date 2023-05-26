@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="icon/spa-icon.png">
+  <img src="icon/spa-icon.png" width="150" height="150" alt="SPA">
 </div>
 
 ## SPA application with REST API implementation
