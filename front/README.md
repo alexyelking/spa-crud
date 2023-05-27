@@ -1,10 +1,23 @@
-# Front
+## Front
+### The algorithm for running
+<br>
 
-## Настройка для локальной разработки (докер):
+1. Duplicate .env.example and rename to .env
 
-1. Скопируй ```.env.example``` в ```.env```
-2. Укажи порт, который у тебя свободен. Либо оставь этот. 
-3. Запусти докер-композ
-4. Зайди на 0.0.0.0:**PORT**
+```
+cp .env .env.example 
+```
 
-## Настройка завершена.
+2. Specify a free port to follow the link, or leave the one that has already been installed
+
+<br><br>
+
+3. Launch Docker-compose
+
+```
+docker-compose up
+```
+
+4. Go through 0.0.0.0:**PORT** (Default PORT is 8080)
+
+### Ready to start
