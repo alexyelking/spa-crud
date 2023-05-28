@@ -10,7 +10,6 @@ cp .env .env.example
 
 2. Specify a free port to follow the link, or leave the one that has already been installed
 <br>
-<br>
 
 3. Git config core file mode must be false
 ```
