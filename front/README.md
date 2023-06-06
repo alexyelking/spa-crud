@@ -21,7 +21,7 @@ git config core.filemode false
 4. Launch Docker-compose
 
 ```
-docker-compose up --build -d
+docker-compose up --build
 ```
 
 5. Wait for npm to finish working (Until the contents of the «node_modules» folder appear completely)

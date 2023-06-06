@@ -12,6 +12,16 @@ All this is done using SPA technology, all information is updated on the fly wit
 
 <hr>
 
+### Status
+
+|               Options               |    Value    |
+|:-----------------------------------:|:-----------:|
+|      **Project ready Status**       |   _Ready_   |
+|       **Development status**        | _Completed_ |
+| **Interest in further development** |      -      |
+
+<hr>
+
 ### <a href="https://github.com/alexyelking/spa-crud/tree/master/back">Back</a>
 
 ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
