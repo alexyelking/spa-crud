@@ -2,12 +2,12 @@
 
 <hr>
 
-| Global path |   Path    | Method | Parameters |      Explanation      |
-|:-----------:|:---------:|:------:|:----------:|:---------------------:|
-|    /api     |     /     |  GET   |     -      | Records index (list)  |
-|    /api     |     /     |  POST  |    ...     |   User information    |
-|    /api     | /{record} |  POST  |    ...     | Dashboard information |
-|    /api     | /{record} | DELETE |     -      |  Emails index (list)  |
+| Global path |   Path    | Method |                     Parameters                     |     Explanation      |
+|:-----------:|:---------:|:------:|:--------------------------------------------------:|:--------------------:|
+|    /api     |     /     |  GET   |                         -                          | Records index (list) |
+|    /api     |     /     |  POST  | first_name, last_name, category, number_of_tickets |    Record create     |
+|    /api     | /{record} |  POST  |  first_name/last_name/category/number_of_tickets   |    Record update     |
+|    /api     | /{record} | DELETE |                         -                          |    Record delete     |
 
 <hr>
 

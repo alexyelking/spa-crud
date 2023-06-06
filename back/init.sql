@@ -1,1 +1,1 @@
-CREATE DATABASE mag3term_db
+CREATE DATABASE spa_crud_db
