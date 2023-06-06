@@ -22,6 +22,7 @@ class RecordController extends Controller
     public int $ordinary_price = 500;
     public int $student_price = 450;
     public int $pensioner_price = 400;
+
     public function index(Request $request)
     {
         $records = Record::paginate($request->limit);
@@ -40,11 +41,11 @@ class RecordController extends Controller
             $total_price = $this->ordinary_price * $number_of_tickets;
         }
         $record = new Record();
-        $record->first_name=$request->first_name;
-        $record->last_name=$request->last_name;
-        $record->category=$category;
-        $record->number_of_tickets=$number_of_tickets;
-        $record->total_price=$total_price;
+        $record->first_name = $request->first_name;
+        $record->last_name = $request->last_name;
+        $record->category = $category;
+        $record->number_of_tickets = $number_of_tickets;
+        $record->total_price = $total_price;
         $record->save();
         return Response::ok(["record" => new RecordDataResource($record)]);
     }
@@ -61,12 +62,12 @@ class RecordController extends Controller
             $total_price = $this->ordinary_price * $number_of_tickets;
         }
         $record->update([
-            'first_name'=>$request->first_name,
-            'last_name'=>$request->last_name,
-            'category'=>$category,
-            'number_of_tickets'=>$number_of_tickets,
-            'total_price'=>$total_price,
-            ]);
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'category' => $category,
+            'number_of_tickets' => $number_of_tickets,
+            'total_price' => $total_price,
+        ]);
         return Response::ok(["record" => new RecordDataResource($record)]);
     }
 
