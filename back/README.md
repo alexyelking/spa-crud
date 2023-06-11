@@ -34,7 +34,7 @@ git config core.filemode false
 4. Launch Docker-compose
 
 ```
-docker-compose up --build -d
+docker-compose up --build
 ```
 
 5. Wait for composer to finish working (the «autoload» file will appear in the «vendor» folder)
