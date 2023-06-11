@@ -23,7 +23,6 @@ services:
 
   db:
     image: mysql
-    restart: always
     volumes:
       - ./db:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/00-test-db.sql

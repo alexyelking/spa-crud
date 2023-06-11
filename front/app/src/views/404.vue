@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="coll s6 offset-3">
-      <h1 >There's definitely nothing here.</h1>
+      <h1>There's definitely nothing here.</h1>
       <button class="btn" @click="toList">To List</button>
     </div>
   </div>
