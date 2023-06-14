@@ -30,8 +30,8 @@ class CreateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name' => ['required', 'string', 'min:1', 'max:15'],
-            'last_name' => ['required', 'string', 'min:1', 'max:15'],
+            'first_name' => ['required', 'string', 'min:2', 'max:20'],
+            'last_name' => ['required', 'string', 'min:2', 'max:20'],
             'category_id' => ['required', 'integer', 'min:1', 'max:3'],
             'number_of_tickets' => ['required', 'integer', 'min:1', 'max:15'],
         ];

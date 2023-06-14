@@ -14,10 +14,10 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name' => ['required', 'string', 'min:2', 'max:50'],
-            'last_name' => ['required', 'string', 'min:2', 'max:50'],
-            'category' => ['required', 'string', 'min:2', 'max:50'],
-            'number_of_tickets' => ['required', 'integer', 'min:1', 'max:50'],
+            'first_name' => ['string', 'min:2', 'max:20'],
+            'last_name' => ['string', 'min:2', 'max:20'],
+            'category_id' => ['integer', 'min:1', 'max:3'],
+            'number_of_tickets' => ['integer', 'min:1', 'max:15'],
         ];
     }
 }
