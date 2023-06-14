@@ -28,13 +28,8 @@ class RecordController extends Controller
     {
         $total_price = $this->getTotalPrice($request->category_id, $request->number_of_tickets);
 
-        $entry = [
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'category_id' => $request->category_id,
-            'number_of_tickets' => $request->number_of_tickets,
-            'total_price' => $total_price
-        ];
+        $entry = $request->all();
+        $entry['total_price'] = $total_price;
 
         $record = Record::create($entry);
 
@@ -43,6 +38,14 @@ class RecordController extends Controller
 
     public function update(UpdateRequest $request, Record $record)
     {
+//        $record = Record::where('id', $record_id);
+
+        $record->update($request->all());
+
+        return Response::ok(["record" => new RecordDataResource($record)]);
+
+//        var_dump($record_id->first_name);
+
 //        $category = $request->category;
 //        $number_of_tickets = $request->number_of_tickets;
 //        if ($category == 'Student') {
@@ -59,7 +62,6 @@ class RecordController extends Controller
 //            'number_of_tickets' => $number_of_tickets,
 //            'total_price' => $total_price,
 //        ]);
-//        return Response::ok(["record" => new RecordDataResource($record)]);
     }
 
     public function getTotalPrice($category_id, $number_of_tickets): int
