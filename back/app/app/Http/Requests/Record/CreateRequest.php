@@ -4,6 +4,12 @@ namespace App\Http\Requests\Record;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * @property mixed $last_name
+ * @property mixed $first_name
+ * @property mixed $category_id
+ * @property mixed $number_of_tickets
+ */
 class CreateRequest extends FormRequest
 {
     /**
@@ -11,7 +17,7 @@ class CreateRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
@@ -21,14 +27,13 @@ class CreateRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             'first_name' => ['required', 'string', 'min:1', 'max:15'],
             'last_name' => ['required', 'string', 'min:1', 'max:15'],
-            'category' => ['required', 'string', 'min:1', 'max:20'],
+            'category_id' => ['required', 'integer', 'min:1', 'max:3'],
             'number_of_tickets' => ['required', 'integer', 'min:1', 'max:15'],
-            'total_price' => ['integer'],
         ];
     }
 }

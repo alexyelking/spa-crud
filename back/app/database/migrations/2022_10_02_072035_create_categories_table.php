@@ -13,13 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('records', function (Blueprint $table) {
-            $table->increments('id')->unique();
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('category');
-            $table->integer('number_of_tickets');
-            $table->integer('total_price');
+        Schema::create('categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+            $table->integer('price');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('records');
+        Schema::dropIfExists('categories');
     }
 };
