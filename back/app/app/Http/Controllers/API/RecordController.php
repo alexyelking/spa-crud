@@ -38,30 +38,17 @@ class RecordController extends Controller
 
     public function update(UpdateRequest $request, Record $record)
     {
-//        $record = Record::where('id', $record_id);
+        $category_id = $request->category_id ?: $record->category_id;
+        $number_of_tickets = $request->number_of_tickets ?: $record->number_of_tickets;
 
-        $record->update($request->all());
+        $total_price = $this->getTotalPrice($category_id, $number_of_tickets);
+
+        $entry = $request->all();
+        $entry['total_price'] = $total_price;
+
+        $record->update($entry);
 
         return Response::ok(["record" => new RecordDataResource($record)]);
-
-//        var_dump($record_id->first_name);
-
-//        $category = $request->category;
-//        $number_of_tickets = $request->number_of_tickets;
-//        if ($category == 'Student') {
-//            $total_price = $this->student_price * $number_of_tickets;
-//        } elseif ($category == 'Pensioner') {
-//            $total_price = $this->pensioner_price * $number_of_tickets;
-//        } else {
-//            $total_price = $this->ordinary_price * $number_of_tickets;
-//        }
-//        $record->update([
-//            'first_name' => $request->first_name,
-//            'last_name' => $request->last_name,
-//            'category' => $category,
-//            'number_of_tickets' => $number_of_tickets,
-//            'total_price' => $total_price,
-//        ]);
     }
 
     public function getTotalPrice($category_id, $number_of_tickets): int
