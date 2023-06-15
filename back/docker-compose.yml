@@ -32,3 +32,15 @@ services:
     ports:
       - ${MYSQL_PORT}:3306
     command: --default-authentication-plugin=mysql_native_password
+
+  test:
+    depends_on:
+      - db
+    volumes:
+      - ./app:/var/www/html
+      - /var/www/html/bootstrap/cache/
+    build:
+      context: .
+      dockerfile: test.dockerfile
+    working_dir: /var/www/html
+    command: [ 'bash', '-c', 'php artisan optimize --env=testing && php artisan migrate:fresh --seed && ./vendor/bin/phpunit' ]
