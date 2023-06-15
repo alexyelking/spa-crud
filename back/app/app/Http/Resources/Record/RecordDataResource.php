@@ -14,6 +14,7 @@ class RecordDataResource extends JsonResource
             "id" => $this->resource->id,
             "first_name" => $this->resource->first_name,
             "last_name" => $this->resource->last_name,
+            "category_id" => $this->resource->category->id,
             "category" => $this->resource->category->name,
             "number_of_tickets" => $this->resource->number_of_tickets,
             "total_price" => $this->resource->total_price,

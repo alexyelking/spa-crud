@@ -1,6 +1,5 @@
 <template>
   <h1>List</h1>
-  <h6>Standard ticket price: 500</h6>
   <button class="btn orange" @click="notification()">
     Task text...
   </button>
@@ -86,7 +85,7 @@ export default {
       }
     },
     notification() {
-      window.alert("Стоимость билетов учреждения досуга. Есть несколько категорий клиентов, обычные клиенты (100%), пенсионеры (80%), студенты (90%), разработать для каждой из этих категорий различные алгоритмы расчёта стоимости билетов для них. Программа должна позволять вычислять стоимость билетов для различных категорий клиентов, иметь возможность вводить клиентов, вносить изменения.");
+      window.alert("Calculate the cost of tickets for leisure facilities. There are several categories of customers and each has its own ticket prices, ordinary customers (500), students (450) and pensioners (400) (fictitious money is used). To develop for each of these categories different algorithms for calculating the cost of tickets for them. The program should allow calculating the cost of tickets for various categories of customers, be able to keep track of ticket purchases, make changes to them, and delete them.");
     }
   },
 }

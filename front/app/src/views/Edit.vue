@@ -21,17 +21,17 @@
         <div class="input-field">
           <p>
             <label>
-              <input v-model="category" value="Ordinary" name="group1" type="radio" checked/>
+              <input v-model="category_id" value="3" name="group1" type="radio" checked/>
               <span>Ordinary</span>
             </label>
             <br>
             <label>
-              <input v-model="category" value="Student" name="group1" type="radio"/>
+              <input v-model="category_id" value="2" name="group1" type="radio"/>
               <span>Student</span>
             </label>
             <br>
             <label>
-              <input v-model="category" value="Pensioner" name="group1" type="radio"/>
+              <input v-model="category_id" value="1" name="group1" type="radio"/>
               <span>Pensioner</span>
             </label>
           </p>
@@ -70,14 +70,13 @@ export default {
   data: () => ({
     first_name: '',
     last_name: '',
-    category: 'Ordinary',
+    category_id: '',
     number_of_tickets: '',
-    total_price: 0
   }),
   mounted() {
     this.first_name = this.entry.first_name
     this.last_name = this.entry.last_name
-    this.category = this.entry.category
+    this.category_id = this.entry.category_id
     this.number_of_tickets = this.entry.number_of_tickets
     setTimeout(() => {
       M.updateTextFields()
@@ -89,9 +88,8 @@ export default {
         id: this.entry.id,
         first_name: this.first_name,
         last_name: this.last_name,
-        category: this.category,
+        category_id: this.category_id,
         number_of_tickets: this.number_of_tickets,
-        total_price: this.total_price
       }
 
       await this.$store.dispatch('updateEntry', entry)

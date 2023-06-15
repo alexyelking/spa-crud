@@ -21,17 +21,17 @@
         <div class="input-field">
           <p>
             <label>
-              <input v-model="category" value="Ordinary" name="group1" type="radio" checked/>
+              <input v-model="category_id" value="3" name="group1" type="radio" checked/>
               <span>Ordinary</span>
             </label>
             <br>
             <label>
-              <input v-model="category" value="Student" name="group1" type="radio"/>
+              <input v-model="category_id" value="2" name="group1" type="radio"/>
               <span>Student</span>
             </label>
             <br>
             <label>
-              <input v-model="category" value="Pensioner" name="group1" type="radio"/>
+              <input v-model="category_id" value="1" name="group1" type="radio"/>
               <span>Pensioner</span>
             </label>
           </p>
@@ -57,18 +57,16 @@ export default {
   data: () => ({
     first_name: '',
     last_name: '',
-    category: 'Ordinary',
+    category_id: 3,
     number_of_tickets: '',
-    total_price: 0,
   }),
   methods: {
     async submitHandler() {
       const entry = {
         first_name: this.first_name,
         last_name: this.last_name,
-        category: this.category,
+        category_id: this.category_id,
         number_of_tickets: this.number_of_tickets,
-        total_price: this.total_price,
       }
       await this.$store.dispatch('createEntry', entry)
       this.$router.push('/list')
