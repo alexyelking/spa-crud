@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Record;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class RecordFactory extends Factory
 {
+    protected $model = Record::class;
+
     /**
      * Define the model's default state.
      *

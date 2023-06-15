@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Database\Factories\RecordFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -14,6 +16,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Record extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'first_name', 'last_name', 'category_id', 'number_of_tickets', 'total_price'
     ];
@@ -21,5 +25,10 @@ class Record extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    protected static function newFactory()
+    {
+        return RecordFactory::new();
     }
 }
