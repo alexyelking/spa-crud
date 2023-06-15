@@ -45,9 +45,11 @@
         </div>
 
         <button class="btn green" type="submit" style="margin-right: 1rem;">Update</button>
-        <button class="btn" :to="'/list'">To List</button>
-      </form>
+        <router-link to="/list">
+          <button class="btn" type="button">To List</button>
+        </router-link>
 
+      </form>
 
     </div>
 

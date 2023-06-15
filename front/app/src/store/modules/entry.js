@@ -16,7 +16,6 @@ export default {
                     category_id: entry.category_id,
                     number_of_tickets: entry.number_of_tickets,
                 })
-                .then(response => console.log(response))
                 .catch(error => console.log(error))
         },
         async updateEntry(ctx, entry) {
@@ -27,7 +26,6 @@ export default {
                     category_id: entry.category_id,
                     number_of_tickets: entry.number_of_tickets,
                 })
-                // .then(response => console.log(response))
                 .catch(error => console.log(error))
         },
 

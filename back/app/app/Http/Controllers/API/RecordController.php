@@ -36,6 +36,11 @@ class RecordController extends Controller
         return Response::ok(["record" => new RecordDataResource($record)]);
     }
 
+    public function show(Record $record)
+    {
+        return Response::ok(["record" => new RecordDataResource($record)]);
+    }
+
     public function update(UpdateRequest $request, Record $record)
     {
         $category_id = $request->category_id ?: $record->category_id;
